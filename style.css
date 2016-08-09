@@ -1,0 +1,70 @@
+html {
+	text-align: center;
+	background-color: #f0f5f5;
+	font-family: Garamond, serif;
+}
+
+.textHide {
+	display: none;
+}
+
+.textAppear {
+	display: block;
+	position: relative;
+	left: 500px;
+}
+
+#fecha {
+	font-style: italic;
+}
+
+.directions {
+	color: red;
+	font-size: 22px;
+}
+
+input {
+	margin: 5px;
+}
+
+input:hover {
+	background-color: #ffddcc;
+	border: red;
+}
+
+.secHeader {
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: 2px 2px silver;
+}
+
+.quer {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+textarea {
+	margin: 5px;
+}
+
+.response {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.special {
+	color: red;
+}
+
+@media screen and (max-width: 500px) { /* for smartphones */
+	.btn {
+		width: 80px;
+		border: 1px solid black;
+	}
+
+	.textAppear {
+		display: block;
+		position: relative;
+		left: 150px;
+	}
+}

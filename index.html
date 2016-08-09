@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="robots" content="noindex"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body onload="todayDate()">
+    <h2>
+      Personal Information
+    </h2>
+    <p class="directions">
+      <em>--Please complete all blanks and answer all questions.--</em>
+    </p>
+    <label>First Name: </label><input type=text id="fname" placeholder="First Name"><br>
+    <label>Last Name: </label><input type=text id="lname" placeholder="Last Name"><br>
+    <label>Phone:</label><input type=number id=phone placeholder="Phone Number"><label>
+    Type:</label><input type=radio name=ptype>Cell <input type=radio name=ptype>Home <input type=radio name=ptype>Work <br>
+    <label>Date of Birth: </label><input type="date" id="dob">
+    <p>
+      <em>(Other info such as address, insurance info, etc., would go on the actual form.)</em>
+    </p><br>
+
+    <h2>Dental and Medical History</h2>
+    <p class="directions"><em>--Please complete all sections.--</em></p><br>
+
+    <p class="secHeader">Section 1: General</p>
+    <p class="quer">Check if true:</p>
+    <input type="checkbox" id="app">I am generally apprehensive about going to the dentist.<br>
+    <input type="checkbox" id="otherGen"> I have other general concerns: <input type="text" name="" id="otherGenBox"><br><br>
+
+    <div id="firstSet">
+    <p class="quer">Check if you have or had in the last 6 months:</p>
+    <input type="checkbox" value="Sensitive gag reflex" onchange="gag()">Sensitive gag reflex.<br>
+    <input type="checkbox" value="Unexplained and/or persistent mouth pain">Unexplained and/or persistent pain in the mouth.<br>
+    <input type="checkbox" value="Trouble swallowing">Trouble swallowing.<br>
+    <input type=checkbox value="Gums bleed while brushing and/or flossing">Gums bleed while brushing and/or flossing.<br>
+    <input type=checkbox value="Gums are sensitive or sore">Gums are sensitive or sore.<br>
+    </div>
+
+    <div id="secondSet">
+    <p class="secHeader">
+      Section 2: Dental History
+    </p>
+    <p class="quer">
+      Do you have, or have you had in the past, any of the following conditions?
+    </p>
+    <input type="checkbox" value="Gingivitis">Gingivitis<br>
+    <input type="checkbox" value="Cavities">Cavities<br>
+    <input type=checkbox value="Gum Disease (Periodontal Disease)">Gum Disease (Periodontal Disease)<br>
+    <input type=checkbox value="Condition D">Condition D<br>
+    <input type=checkbox value="Condition E">Condition E<br>
+    <input type=checkbox value="Condition F">Condition F<br>
+    <input type=checkbox value="Condition G">Condition G<br>
+    <input type=checkbox value="Condition H">Condition H<br>
+    </div>
+
+    <div id="thirdSet">
+    <p class="secHeader">
+      Section 3: Dental History, Continued
+    </p>
+    <p class="quer">
+      Have you ever had any of the following dental procedures?
+    </p>
+    <input type=checkbox value="Extraction">Extraction (teeth removed)<br>
+    <input type=checkbox value="Orthodontics">Orthodontics (braces, etc.)<br>
+    <input type=checkbox value="Root canal">Root canal<br>
+    <input type=checkbox value="Cavity filling">Cavity filling<br>
+    <input type=checkbox value="Procedure E">Procedure E<br>
+    <input type=checkbox value="Procedure F">Procedure F<br>
+    </div>
+
+    <div id="fourthSet">
+    <p class="secHeader">
+      Section 4: Medical History
+    </p>
+    <p class="quer">
+      Do you have, or have you had in the past, any of the following conditions?
+    </p>
+    <input type=checkbox value="Fainting or dizziness">Fainting or dizziness<br>
+    <input type=checkbox value="Eating disorder">Eating disorder such as anorexia or bulimia<br>
+    <input type=checkbox value="Acute cough">Cough lasting longer than 2 weeks<br>
+    <input type=checkbox value="HIV">HIV or AIDS<br>
+    <input type=checkbox value="STD">Sexually transmitted disease (STD) other than HIV/AIDS<br>
+    <input type=checkbox value="Condition F">Condition F<br>
+    <input type=checkbox value="Condition G">Condition G<br>
+    <input type=checkbox value="Condition H">Condition H<br>
+    <input type=checkbox value="Condition I">Condition I<br>
+    </div>
+
+    <p class="secHeader">
+      Section 5: Medications
+    </p>
+
+    <div id="medbox"><label class="quer">Are you allergic to any medications?</label> <input type=radio name="meds" onchange="allergMed()">Yes <input type=radio name="meds" onchange="noAllerg()">No <br><br><br><br>
+    <textarea id="allergy" class="textHide" placeholder="Medication allergies..."></textarea> <!--hidden by default -->
+    </div>
+
+    <label class="quer">What medications are you currently taking?</label><br>
+    <textarea id="currMed" placeholder="Current medications..."></textarea><br><br> <!--They write their current medications here. -->
+
+    <p class="secHeader">
+      Section 6: Other
+    </p>
+    <p class="quer" style="color: red;">If you have any other questions or concerns for your dentist and/or technician, please write them in Section 1 above.</p><br>
+
+    <input type="submit" onclick="MyFunction()" class="btn"> <!--The button that fires the main function -->
+    <a href="#top"><button class="btn">Back to Top</button></a>
+    <br><br><br>
+
+    <!--The below would ideally be on another page, but this is my "good enough" version until I learn to
+    pass data to multiple pages.-->
+
+    <h2>Reference for Dentist</h2>
+    <label>Today's Date:</label><p id="fecha"></p><br><br>
+    <label>Patient Last Name: </label><input type=text id="dlast"><br>
+    <label>Patient First Name: </label><input type=text id=dfirst><br>
+    <label>Patient DOB: </label><input type=text id="ddob"><br><br>
+
+    <p>
+      Please note the following <strong>psychological or personal concerns</strong> that the patient has:
+    </p>
+    <div class="special">
+      <p id="appres" class="response"></p> <!--If "apprehensive" q in Sec 1 is checked. -->
+      <p id="otherConcern" class="response"></p> <!--For "Other" in Sec 1 -->
+    </div>
+
+
+    <p id="gagRes" class="response">
+      <!--if the patient checks "Sensitive gag reflex", then have the script write here: "Patient has a sensitive gag reflex. Please use extra care."  -->
+    </p><br>
+
+    <p>
+      The patient has reported the following general complaints; please inquire:
+    </p>
+    <p id="result1" class="response"></p> <!--Other stuff from Sec 1 -->
+
+
+    <p>
+      The patient has had the following dental procedures:
+    </p>
+
+    <p id="result3" class="response">
+      <!--Anything listed in Section 3 of patient form. -->
+    </p>
+
+    <p>
+      The patient has reported the following dental conditions:
+    </p>
+    <p id="result2" class="response"></p>
+
+    <p>
+      The patient has reported the following medical conditions:
+    </p>
+    <p id="result4" class="response">
+      <!--Anything listed on section 4 of patient form. -->
+    </p>
+
+      <p>The patient is allergic to the following medications:</p>
+      <p id="result5" class="response">
+        <!--What the patient lists as meds he/she is allergic to. -->
+      </p>
+
+    <p>
+      The patient is taking the following medications:
+    </p>
+   <p id="takeMeds" class="response">
+     <!--Meds the patient is taking. -->
+   </p>
+
+  </body>
+</html>
